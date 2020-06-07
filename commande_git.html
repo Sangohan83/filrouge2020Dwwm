@@ -7,12 +7,71 @@
 <body>
 <code>
 <pre>
-git -- version 
-git config --global user.name "nom prenom"
-git config --global user.email "blabla@mail.com"
-mkdir projet
-cd projet
-git init
+git -- version <!-- verification -->
+git config --global user.name "nom prenom" <!-- config nom -->
+git config --global user.email "blabla@mail.com" <!-- config mail -->
+mkdir projet <!-- creer dossier -->
+cd projet <!-- rentrer dans le dossier -->
+git init <!-- initialiser git -->
+
+<!-- Lorsque des fichiers existent dans le dossier -->
+
+git add filename <!-- Selectionner fichier -->
+git commit -m "commentaire" <!-- photo des fichiers -->
+git log  <!-- historique des modifications -->
+git branch nom_de_la_branche  <!-- creation de la branche -->
+git branch <!-- lister les branches (branche principale = Master ) -->
+git checkout nom_de_la_branche <!-- changer de branche -->
+git merge nom_de_la_branche <!-- rapatrier la branche -->
+git branch -d nom_de_la_branche <!-- supprimer la branche -->
+
+<!-- Creer un compte github pour les depots en ligne -->
+
+git remote add origin url_projet_github <!-- initialiser depot distant appelé origin -->
+git push origin master <!-- deposer le projet (nom du label origin avec nom de la branche master) -->
+git pull origin master <!-- recuperer projet vers local -->
+
+
+<!-- Tout rajouter -->
+git add --all
+<!-- Modifier un commit -->
+git add. <!-- Ajouter toutes les fichiers "untracked"/"modified" -->
+git commit --amend <!-- envoi dans un editeur de texte -->
+
+<!-- Fusionner deux branches -->
+git merge nom_de_la_branche
+
+git merge --no-ff nom_de_la_branche  <!-- sans fast forward -->
+
+<!-- Voir quels fichiers sont "untracked" et "modified" -->
+
+git status
+
+<!-- Envoyer commit de la branche actuelle vers master -->
+
+git rebase master
+
+
+<!-- Mettre en pile des modifications en cours ( remisage ) -->
+
+git stash
+
+git stash list  <!-- list des modifications en attente -->
+
+git stash apply <!-- recupere le travail en attente -->
+
+git stash drop  <!-- vide la pile -->
+
+git stash save nom_de_la_sauvegarde
+
+git stash show stash@{1}  <!-- affiche le stash 1 -->
+........................ -p <!-- plus de details -->
+
+git stash pop stash@{1} <!-- importe le stash 1 et le vide du stash -->
+
+git stash branch nom_de_la_branche <!-- met en memoire puis switch dans la branche nom_de_la_branche -->
+
+git stash -u  <!-- rajoute les nouveaux fichiers en memoire -->
 </pre>
 </code>
 
